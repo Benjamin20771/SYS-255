@@ -56,4 +56,47 @@ Do not enable a LAN DHCP Server
 
 Do not revert to HTTP
 
+## Windows Client Set-up
+
+* Make sure Windows network configuration is on LAN
+
+* Your hostname/computer name should be set to wks01-yourfirstname.
+
+* Open File Explorer
+* Right-click on “This PC”
+* Click “Properties”
+* Click on “Change Settings”
+* Click “Change” next to “To rename this computer…”
+* Then type: wks01-yourfirstname
+* Check “firstname” to your real first name.
+
+### New Admin Account
+* Go to "lusrmgr.msc"
+* Add new local user (-loc)
+* Password never expires
+* Add to Administrators (don't forget the s) (WKS01-DEYOT\Administrators)
+* Log out and then back in
+
+### Network setup
+* Go to IPV4 properties
+* IP - Personal one
+* Subnet - 255.255.255.0
+* Default Gateway and DNS Server - 10.0.5.2
+
+* Now go to PFsense and log in with the needed password/information
+#### System Wizard: General Information
+* Hostname: fw1-yourfirstname
+* Domain: yourfirstname.local
+* Primary DNS: 8.8.8.8
+#### System Wizard:  Configure WAN Interface
+* RFC1918 Networks:  Uncheck "Block private networks from entering via WAN"
+#### System / User Manager:  Set Root Password
+* Up to you.
+
+#### Lastly check for connectivity super fast
+
+# End of Lab 01
+
+
+
 
